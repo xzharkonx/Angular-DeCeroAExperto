@@ -1,0 +1,37 @@
+
+<p>Listado de heroes</p>
+
+<!-- <div *ngIf="heroeBorrado !== '' "> -->
+<!-- Angular es lo suficientemente inteligente para evaluar
+si el argumento pasado es un: 0 || false || '' || null -->
+
+<!-- Le decimos con el else, que si no se encuentra ese valor
+entonces que nos muestre el template "noBorrado" del 
+ng-template con esa "referencia local". -->
+<div *ngIf="heroeBorrado; else noBorrado">
+    <h3>Héroe borrado: <small>{{heroeBorrado}}</small></h3>
+</div>
+
+<!-- El ng-template es un componente propio de Angular que no 
+tiene ninguna contraparte en el lado del HTML, solo
+mostrará el contenido. -->
+<!-- También hay que asignarle una "referencia local", que se 
+identifica por el # y no es algo que existe en el componente de ts,
+si no que solo existe en este template. -->
+<ng-template #noBorrado>
+    <h3>No ha borrado nada.</h3>
+</ng-template>
+
+
+<button (click)="borrarHeroe()">
+    Borrar
+</button>
+
+<ul>
+    <li *ngFor="let heroe of heroes; let i = index">
+        <!-- {{i}}{{heroe}} -->
+        <!-- {{i.toString() + ".- " + heroe}} -->
+        {{i + 1}}.- {{heroe}}
+    </li>
+</ul>
+
