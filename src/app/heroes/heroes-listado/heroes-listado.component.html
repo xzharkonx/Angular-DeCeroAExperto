@@ -8,6 +8,7 @@ si el argumento pasado es un: 0 || false || '' || null -->
 <!-- Le decimos con el else, que si no se encuentra ese valor
 entonces que nos muestre el template "noBorrado" del 
 ng-template con esa "referencia local". -->
+<!-- <div *ngIf="heroeBorrado !== ''; else noBorrado"> -->
 <div *ngIf="heroeBorrado; else noBorrado">
     <h3>Héroe borrado: <small>{{heroeBorrado}}</small></h3>
 </div>
@@ -26,6 +27,11 @@ si no que solo existe en este template. -->
 <button (click)="borrarHeroe()">
     Borrar
 </button>
+
+<!-- Para iterar crearemos dentro un *ngFor que nos mostrará
+una lista de elemtos de ese array, en seguida de esto,
+podemos añadirle más codigo como si fuera lo prinicipal
+a estar dentro del for "pura lógica". -->
 
 <ul>
     <li *ngFor="let heroe of heroes; let i = index">

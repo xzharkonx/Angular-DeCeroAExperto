@@ -7,9 +7,11 @@ import { Component} from '@angular/core';
 })
 export class HeroesListadoComponent {
 
-  public heroes: string[] = ['Spiderman','Ironman', 'Hulk','Thor', 'Capitán América'] ;
+  public heroes: string[] = ['Spiderman','Ironman', 'Hulk','Thor', 'Capitán América','Lina','2','4'] ;
   // public heroeBorrado: string = '...';
   public heroeBorrado: string|undefined = '';
+  // Mira que se pueden ocupar cualquiera de esos para indicar que no entrará en un If
+  // public heroeBorrado: string|undefined|boolean|null|number = '' || undefined || false || null || 0;
   borrarHeroe(){
     // this.heroeBorrado = this.heroes.shift();
     this.heroeBorrado = this.heroes.shift() || '';

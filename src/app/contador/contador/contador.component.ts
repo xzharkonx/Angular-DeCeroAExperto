@@ -19,7 +19,8 @@ import { Component } from '@angular/core';
 })
 export class ContadorComponent {
 
-     // Es Opcional colocarle "public" y el tipo "string".
+  // Es Opcional colocarle "public" y el tipo "string".
+  // Estrictamente tipada pero es Opcional.
   // public titulo: string = 'Contador App';
   titulo: string = 'Contador App';
   numero: number = 10; 

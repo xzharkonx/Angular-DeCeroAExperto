@@ -16,7 +16,7 @@ import { HeroesListadoComponent } from "./heroes-listado/heroes-listado.componen
         HeroesListadoComponent
     ],
     imports: [
-        CommonModule
+        CommonModule // Sirve para ofrecernos modúlos/librerías como el *ngFor o el *ngIf.
     ]
 
 })
