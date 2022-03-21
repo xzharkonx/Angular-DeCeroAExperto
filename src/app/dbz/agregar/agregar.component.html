@@ -1,0 +1,68 @@
+<h3>Agregar a: <small>{{nuevo.nombre}}</small></h3>
+<h5>Poder: <small>{{nuevo.poder}}</small></h5>
+<hr>
+
+<!-- Ahora intentaremos prevenir el evento submit para que recarge o envie
+la petición y esta recargue la página. -->
+
+<!-- Capturamos el evento submit del formulario con el argumento
+reservado de $event tal como esta para obtener la info del evento. -->
+<!-- <form (submit)="agregar( $event )"> -->
+
+<!-- Una forma más sencilla de hacerlo es con un ngSubmit -->
+<form (ngSubmit)="agregar()">
+
+    <!-- Las llaves cuadradas serviran para emitir un valor a una propiedad de este Objeto -->
+    <!-- El [value] entre parentesis hace referencia al OneWayDataBinding
+    Que sirve para que sepa que que se le enviará información de una
+    sola vía desde la clase del componente. -->
+
+    <!-- Con () será para emitir o escuchar eventos. -->
+    
+    <!-- <input
+    type="text" 
+    placeholder="Nombre"
+    
+    [value]="nuevo.nombre"
+    (input)="cambiarNombre($event)"
+    /> -->
+    
+    <!-- Todo esto se puede cambiar por un ngModel -->
+    <!-- Es necesario colocarle el atributo de name
+        que será el mismo que nuestro atributo de nuestra clase-->
+    
+    <!-- Con [(ngModel)] entre corchetes [] indicamos que le enviaremos
+    datos a esa propiedad, en este caso al valor default que jala 
+    de nuetra clase que esta por default.
+    Y con los () indicamos que el valor que tenemos en el input será
+    el que le envia a nuestro valor nombre de nuestro objeto nuevo
+    por medio de la asignación del valor al ngModel. -->
+    
+    <!-- Ocea que el valor que hay en el input se lo asignara al atributo
+    que hayamos colocado en el ngModel y el atributo que tenga el mismo
+    valor en el name será el que se tomará de la clase. -->
+
+    <!-- Este es el concepto de TwoWayDataBinding -->
+    <!-- Emite así como resive eventos o propiedades -->
+    <input
+    type="text" 
+    placeholder="Nombre"
+    name="nombre"
+    [(ngModel)]="nuevo.nombre"
+    />
+
+    <!-- <input
+        type="number"
+        placeholder="Poder"
+        [value]="nuevo.poder"
+    /> -->
+    <input
+        type="number"
+        placeholder="Poder"
+        name="poder"
+        [(ngModel)]="nuevo.poder"
+    />
+    <button type="submit">
+        Agregar
+    </button>
+</form>
